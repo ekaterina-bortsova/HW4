@@ -85,3 +85,93 @@ document.addEventListener('DOMContentLoaded', function () {
 
   updateCounter(); 
 });
+
+// Задание 4
+const coursesMass = [
+  {
+    cardImg: {
+      src: 'assets/images/courses-01.jpg',
+      alt: 'Course #1',
+    },
+    header: 'Digital Marketing',
+    descr:
+      'You can get free images and videos for your websites by visiting Unsplash, Pixabay, and Pexels.',
+    authorImg: {
+      src: 'assets/images/author-01.png',
+      alt: 'Author #1',
+    },
+  },
+  {
+    cardImg: {
+      src: 'ssets/images/courses-02.jpg',
+      alt: 'Course #2',
+    },
+    header: 'Business World',
+    descr:
+      'Quisque cursus augue ut velit dictum, quis volutpat enim blandit. Maecenas a lectus ac ipsum porta.',
+    authorImg: {
+      src: 'assets/images/author-02.png',
+      alt: 'Author #2',
+    },
+  },
+  {
+    cardImg: {
+      src: 'ssets/images/courses-03.jpg',
+      alt: 'Course #3',
+    },
+    header: 'Media Technology',
+    descr:
+      'Pellentesque ultricies diam magna, auctor cursus lectus pretium nec.',
+    authorImg: {
+      src: 'assets/images/author-03.png',
+      alt: 'Author #3',
+    },
+  },
+  {
+    cardImg: {
+      src: 'ssets/images/courses-04.jpg',
+      alt: 'Course #4',
+    },
+    header: 'Communications',
+    descr:
+      'Download free images and videos for your websites by visiting Unsplash, Pixabay, and Pexels.',
+    authorImg: {
+      src: 'assets/images/author-04.png',
+      alt: 'Author #4',
+    },
+  },
+  {
+    cardImg: {
+      src: 'ssets/images/courses-05.jpg',
+      alt: 'Course #5',
+    },
+    header: 'Business Ethics',
+    descr:
+      'Pellentesque ultricies diam magna, auctor cursus lectus pretium nec. Maecenas finibus lobortis enim.',
+    authorImg: {
+      src: 'assets/images/author-05.png',
+      alt: 'Author #5',
+    },
+  },
+]
+
+ const coursesContainer = document.getElementById('coursesContainer');
+ 
+ coursesMass.forEach(course => {
+   const courseElement = document.createElement('div');
+   courseElement.classList.add('carousel__item');
+   courseElement.innerHTML = `
+     <img src="${course.cardImg.src}" alt="${course.cardImg.alt}">
+     <div class="carousel__content">
+       <h4>${course.header}</h4>
+       <p>${course.descr}</p>
+       <div class="item__last-row">
+         <img src="${course.authorImg.src}" alt="${course.authorImg.alt}">
+         <div class="text-button-pay">
+           <a href="#">Pay <i class="fa fa-angle-double-right"></i></a>
+         </div>
+       </div>
+     </div>
+   `;
+   coursesContainer.appendChild(courseElement);
+ });
